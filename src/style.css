@@ -1,0 +1,26 @@
+:root {
+  --background: #292635;
+  --purple-1: #5640e5;
+  --purple-2: #cc4cf7;
+  --yellow-1: #f7ac66;
+  --green-1: #6e9c0b;
+  --default-text: #e9e8eb;
+}
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.Tracker {
+  background-color: var(--background);
+  width: 100%;
+  height: 100%;
+}
+button {
+  /* clear styles */
+  background: transparent;
+  border: none;
+}

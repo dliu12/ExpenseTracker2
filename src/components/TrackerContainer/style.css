@@ -1,0 +1,71 @@
+.TrackerContainer {
+  position: relative;
+  /* border: 1px solid red; */
+  max-width: 500px;
+  max-height: 750px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: var(--default-text);
+}
+.TrackerContainer > * {
+  width: 95%;
+  margin: 0 auto;
+}
+.Tracker-actions {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.Tracker-data {
+  /* border: 1px solid red; */
+  height: 350px;
+}
+
+.AddModal,
+.CloseModal {
+  border: 2px solid var(--purple-2);
+  color: var(--purple-2);
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.2s;
+}
+.AddModal:hover:after {
+  content: 'ADD';
+}
+.CloseModal:hover:after {
+  content: 'CLOSE';
+}
+.AddModal:hover,
+.CloseModal:hover {
+  width: 115px;
+  justify-content: start;
+}
+.add-icon,
+.close-icon {
+  padding: 5px;
+}
+.Tracker-month {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+.Tracker-total {
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--purple-2);
+}

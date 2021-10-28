@@ -1,0 +1,9 @@
+.graph {
+  stroke: var(--background);
+  stroke-width: 15px;
+  transition: stroke-width 1s;
+}
+.graph:hover {
+  stroke: var(--background);
+  stroke-width: 5px;
+}
