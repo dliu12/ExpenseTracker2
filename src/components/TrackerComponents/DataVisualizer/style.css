@@ -2,8 +2,20 @@
   stroke: var(--background);
   stroke-width: 15px;
   transition: stroke-width 1s;
+  transform: translate(175px, 175px);
 }
 .graph:hover {
   stroke: var(--background);
   stroke-width: 5px;
+}
+svg text {
+  fill: white;
+  font-size: 20px;
+  font-weight: bold;
+  transform: translate(200px, 50px);
+}
+.dataVisualization {
+  /* border: 1px solid red; */
+  width: 350px;
+  height: 350px;
 }

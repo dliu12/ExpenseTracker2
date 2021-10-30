@@ -83,7 +83,7 @@ const AddModal = () => {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <label className="form-label" for="form-title">
+          <label className="form-label" htmlFor="form-title">
             I SPEND ON...
           </label>
           <input

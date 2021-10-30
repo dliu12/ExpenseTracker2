@@ -14,10 +14,9 @@ const DataVisualizer = ({ data }) => {
 
       var arc = d3.arc().innerRadius(50).outerRadius(120);
 
-      let g = svg.append('g').attr('transform', 'translate(200, 150)');
+      let g = svg.append('g');
 
       var arcs = g.selectAll('arc').data(dataConvert).enter().append('g');
-
       arcs
         .append('path')
         .attr('fill', (data, i) => {
@@ -25,6 +24,17 @@ const DataVisualizer = ({ data }) => {
         })
         .classed('graph', (d) => d)
         .attr('d', arc);
+
+      arcs.on('mouseenter', (event, data) => {
+        arcs.append('text');
+        d3.select('text').text(() => {
+          return `${text[data.index]}:$${data.data}`;
+        });
+      });
+
+      arcs.on('mouseout', () => {
+        d3.select('text').remove();
+      });
     }
   }, [data, d3Container.current]);
   return (

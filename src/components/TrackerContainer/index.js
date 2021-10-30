@@ -17,7 +17,7 @@ import './style.css';
   Functionalities:
   - [X] Display month, getFullYear
   - [X] Display expense list and income list
-  - [ ] Display data Visualization
+  - [X] Display data Visualization
   - [X] allow add and close modal
 */
 
@@ -79,7 +79,10 @@ const TrackerContainer = () => {
         </button>
       </header>
       {openModal ? <AddModal /> : null}
-      <DataVisualizer data={[total.expense, total.income]} />
+      <div className="Tracker-data">
+        <DataVisualizer data={[total.expense, total.income]} />
+      </div>
+
       <span className="Tracker-total">
         Total:{' '}
         {total.total < 0 ? `-$${Math.abs(total.total)}` : `$${total.total}`}
