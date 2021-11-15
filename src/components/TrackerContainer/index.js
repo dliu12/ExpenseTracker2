@@ -52,7 +52,11 @@ const TrackerContainer = () => {
   React.useEffect(() => {
     const totalList = JSON.parse(window.localStorage.getItem('totalList'));
     if (totalList) {
-      setTotal(totalList);
+      setTotal((prev) => ({
+        total: totalList.total ? totalList.total : 0,
+        expense: totalList.expense ? totalList.expense : 0,
+        income: totalList.income ? totalList.income : 0,
+      }));
     } else {
       setTotal(totalListStructure);
     }
@@ -80,7 +84,12 @@ const TrackerContainer = () => {
       </header>
       {openModal ? <AddModal /> : null}
       <div className="Tracker-data">
-        <DataVisualizer data={[total.expense, total.income]} />
+        <DataVisualizer
+          data={[
+            { label: 'Expense', value: total.expense },
+            { label: 'Income', value: total.income },
+          ]}
+        />
       </div>
 
       <span className="Tracker-total">
