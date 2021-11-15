@@ -10,7 +10,6 @@ const DataVisualizer = ({ data }) => {
       var color = ['#cc4cf7', '#6e9c0b'];
       let pie = d3.pie();
       var dataConvert = pie(data.map((item) => item.value));
-      console.log(dataConvert);
 
       var arc = d3.arc().innerRadius(50).outerRadius(120);
 
@@ -20,6 +19,7 @@ const DataVisualizer = ({ data }) => {
       arcs
         .append('path')
         .attr('fill', (data, i) => {
+          console.log(i);
           return color[i];
         })
         .classed('graph', (d) => d)
@@ -27,8 +27,8 @@ const DataVisualizer = ({ data }) => {
 
       arcs.on('mouseenter', (event, value) => {
         arcs.append('text');
-        d3.select('text').text(() => {
-          return `${data[value.index].label}:$${value.data}`;
+        d3.select('text').text((item) => {
+          return `${data[item.index].label}:$${value.data}`;
         });
       });
 
